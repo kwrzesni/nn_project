@@ -8,13 +8,15 @@ import numpy as np
 class TrainingWindow:
     def __init__(self, epochs, training_history):
         self.frame = Tk()
-        self.frame.resizable(0, 0)
+        #self.frame.resizable(0, 0)
         self.frame.title('Przebieg uczenia sieci')
         screen_width = self.frame.winfo_screenwidth()
         screen_height = self.frame.winfo_screenheight()
+        self.frame.minsize(width=325, height=235)
         self.frame.geometry('325x235+%d+%d' % ((screen_width - 325) / 2, (screen_height - 235) / 2))
         self.frame.grid_propagate(False)
         self.frame.eval('tk::PlaceWindow . center')
+        
 
         self.epochs = epochs
         self.training_history = training_history
@@ -71,6 +73,7 @@ class Gui:
         self.frame.title('gui')
         screen_width = self.frame.winfo_screenwidth()
         screen_height = self.frame.winfo_screenheight()
+        self.frame.minsize(width=770, height=395)
         self.frame.geometry('770x395+%d+%d' % ((screen_width - 770) / 2, (screen_height - 395) / 2))
         self.frame.grid_propagate(False)
 
